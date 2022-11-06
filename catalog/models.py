@@ -60,6 +60,7 @@ class Book(models.Model):
 
     def display_author(self):
         return ','.join([author.last_name for author in self.author.all()])
+
     display_author.short_description = 'Авторы'  # изменение название функции при использовании
 
 
@@ -84,7 +85,5 @@ class BookInstance(models.Model):
 
     def __str__(self):
         return '%s %s %s' % (self.inv_nom, self.book, self.status)
-
-
 
 # Create your models here.
